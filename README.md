@@ -6,5 +6,5 @@ The content within this repository is my own work produced as a result of comple
 * https://www.udemy.com/course/django-and-python-full-stack-developer-masterclass/
 
 
-### IDE used
+## IDE used
 Visual Studio Code with Python extension - https://code.visualstudio.com/download
