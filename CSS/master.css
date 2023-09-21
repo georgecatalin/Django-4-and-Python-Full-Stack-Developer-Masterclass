@@ -1,0 +1,10 @@
+.btn-primary{
+    color:brown;
+    background-color: fuchsia;
+}
+
+.btn-primary:hover{
+    color:black;
+    background-color: goldenrod;
+}
+
