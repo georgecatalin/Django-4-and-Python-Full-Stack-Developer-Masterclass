@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'first_app.apps.FirstAppConfig', # first_app -> name of the dir of the app, apps -> from apps.py, FirstAppConfig --> from inside app.py
+    'variables_in_templates.apps.VariablesInTemplatesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
