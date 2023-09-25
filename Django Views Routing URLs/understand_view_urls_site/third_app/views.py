@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseNotFound, Http404
 
 # Create your views here.
 my_dict = {
@@ -11,4 +11,10 @@ my_dict = {
 }
 
 def news_page(request, topic):
-    return HttpResponse(my_dict[topic])
+    try:
+        result = my_dict[topic]
+        return HttpResponse(my_dict[topic])
+    except:
+        result = 'Page not found'
+        # return HttpResponseNotFound(result)
+        raise Http404(result)
