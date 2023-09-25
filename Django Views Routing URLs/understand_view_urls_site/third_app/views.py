@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseNotFound, Http404, HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 my_dict = {
@@ -26,4 +27,5 @@ def redirect_user(request, number_of_the_page):
     topics_list = list(my_dict.keys())
     topic = topics_list[number_of_the_page] # we assume here that the user will provide us with a valid index that exists in the list
 
-    return HttpResponseRedirect(topic)
+    webpage = reverse('topic-page', args=[topic])
+    return HttpResponseRedirect(webpage)
