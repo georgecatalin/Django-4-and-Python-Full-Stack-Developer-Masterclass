@@ -6,6 +6,7 @@ app_name = 'variables_in_templates'
 
 urlpatterns = [
     path('variables/', views.variable_view, name='variable'),
-    path('', views.example_view, name='example')
+    path('', views.example_view, name='example'),
+    path('inherited/', views.inherited_template_view)
 
 ]

@@ -14,3 +14,7 @@ def variable_view(request):
 
 def example_view(request):
     return render(request, 'variables_in_templates/example.html')
+
+
+def inherited_template_view(request):
+    return render(request, 'variables_in_templates/inherited.html')
