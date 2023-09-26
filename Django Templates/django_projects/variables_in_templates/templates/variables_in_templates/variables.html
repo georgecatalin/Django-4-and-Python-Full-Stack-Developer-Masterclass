@@ -30,6 +30,17 @@
     {% endfor %}
     </ul>
 
+    <ul>
+    {% for year in my_list %}
+        {% if year == 1953 %}
+            <li>Anul de nastere al lui tata</li>
+        {% elif year == 1954 %} 
+            <li>Anul de nastere al mamei</li>
+        {% else %}
+            <li>{{year}}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
 
 </body>
 </html>
