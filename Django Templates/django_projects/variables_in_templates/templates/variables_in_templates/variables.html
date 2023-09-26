@@ -14,5 +14,22 @@
     <p> An element of a dictionary = {{my_dictionary.inside_key}}</p>
     <p> A comment inside Jinja = {# This is a comment #}</p>
 
+    <ul>
+    {% for item in my_list %}
+        <li>
+            {{item}}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <ul>
+    {% for key,value in my_dictionary.items %}
+        <li>
+            {{key}} : {{value}}
+        </li>
+    {% endfor %}
+    </ul>
+
+
 </body>
 </html>
