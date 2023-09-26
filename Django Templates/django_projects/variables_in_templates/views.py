@@ -10,3 +10,7 @@ def variable_view(request):
                                    }
 
     return render(request, 'variables_in_templates/variables.html', context=my_variable_is_a_dictionary)
+
+
+def example_view(request):
+    return render(request, 'variables_in_templates/example.html')
