@@ -1,0 +1,33 @@
+(.venv) PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Models Databases Queries\django_models> python manage.py shell
+Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from office_app.models import Patient
+>>> george = Patient(first_name = 'George', last_name = 'Calin', age = 45)
+>>> george.save()
+>>> Patient.objects.create(first_name = 'Mara', last_name = 'Calin', age = 12)
+<Patient: Patient object (2)>
+>>> my_list = [Patient(first_name = 'Sorina', last_name = 'Calin', age = 46), Patient(first_name = 'Zizou', last_name = 'Calin', age = 3)] 
+>>> Patient.objects.bulk_create(my_list)
+[<Patient: Patient object (3)>, <Patient: Patient object (4)>]
+
+Use quit() or Ctrl-Z plus Return to exit
+>>> ^Z
+
+now exiting InteractiveConsole...
+
+**********************************************************************
+
+(.venv) PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Models Databases Queries\django_models> python manage.py shell
+Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from office_app.models import Patient
+>>> Patient.objects.all()
+<QuerySet [<Patient: George, Calin is 45 old.>, <Patient: Mara, Calin is 12 old.>, <Patient: Sorina, Calin is 46 old.>, <Patient: Zizou, Calin is 3 old.>]>
+>>> Patient.objects.all()[0]
+<Patient: George, Calin is 45 old.>
+>>> Patient.objects.all()[0:2]
+<QuerySet [<Patient: George, Calin is 45 old.>, <Patient: Mara, Calin is 12 old.>]>
+>>> quit()
+
