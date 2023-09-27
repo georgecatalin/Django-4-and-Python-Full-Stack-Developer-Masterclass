@@ -8,3 +8,5 @@ The content within this repository is my own work produced as a result of comple
 
 ## IDE used
 Visual Studio Code with Python extension - https://code.visualstudio.com/download
+
+![Course Info](2023-09-27_17-10-59.png)
