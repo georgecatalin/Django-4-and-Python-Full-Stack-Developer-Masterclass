@@ -79,3 +79,26 @@ Type "help", "copyright", "credits" or "license" for more information.
 ******************************************************************************************************************
 https://docs.djangoproject.com/en/4.2/ref/validators/
 
+*******************************************************************************************************************
+
+(.venv) PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Models Databases Queries\django_models> python manage.py shell  
+Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from office_app.models import Patient 
+>>> caine = Patient.objects.get(id=1)
+>>> caine
+<Patient: George, Calin is 45 old.>
+>>> caine.first_name = 'Geox'
+>>> caine.age = 45
+>>> caine.age = 56
+>>> caine       
+<Patient: Geox, Calin is 56 old.>
+>>> caine.save()
+>>> Patient.objects.all()
+<QuerySet [<Patient: Geox, Calin is 56 old.>, <Patient: Mara, Calin is 12 old.>, <Patient: Sorina, Calin is 46 old.>, <Patient: Zizou, Calin is 3 old.>]>
+
+>>> caine.delete()
+(1, {'office_app.Patient': 1})
+>>> Patient.objects.all()
+<QuerySet [<Patient: Mara, Calin is 12 old.>, <Patient: Sorina, Calin is 46 old.>, <Patient: Zizou, Calin is 3 old.>]>
