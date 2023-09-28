@@ -31,3 +31,51 @@ Type "help", "copyright", "credits" or "license" for more information.
 <QuerySet [<Patient: George, Calin is 45 old.>, <Patient: Mara, Calin is 12 old.>]>
 >>> quit()
 
+***********************************************************************
+
+(.venv) PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Models Databases Queries\django_models> python manage.py shell
+Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> Patient.objects.get(id=1)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Patient' is not defined
+>>> from office_app.models import Patient
+>>> Patient.objects.get(id=1)
+<Patient: George, Calin is 45 old.>
+>>> Patient.objects.filter(last_name = 'Calin').all()
+<QuerySet [<Patient: George, Calin is 45 old.>, <Patient: Mara, Calin is 12 old.>, <Patient: Sorina, Calin is 46 old.>, <Patient: Zizou, Calin is 3 old.>]>
+>>> Patient.objects.filter(last_name = 'Calin').filter(age = 45).all()
+<QuerySet [<Patient: George, Calin is 45 old.>]>
+>>> from django.db.models import Q
+>>> Patient.objects.filter(Q(last_name = 'Calin') & Q(age = 45)).all()
+<QuerySet [<Patient: George, Calin is 45 old.>]>
+>>> quit
+Use quit() or Ctrl-Z plus Return to exit
+>>> quit()
+
+
+*************************************************************************************************
+https://docs.djangoproject.com/en/4.2/ref/models/querysets/#field-lookups
+
+.venv) PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Models Databases Queries\django_models> python manage.py shell
+Python 3.10.11 (tags/v3.10.11:7d4cc5a, Apr  5 2023, 00:38:17) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from office_app.models import Patient
+>>> Patient.objects.filter(first_name__startswith = 'G').all()
+<QuerySet [<Patient: George, Calin is 45 old.>]>
+>>> Patient.objects.filter(first_name__in = ['George', 'Zizou']).all()
+<QuerySet [<Patient: George, Calin is 45 old.>, <Patient: Zizou, Calin is 3 old.>]>
+>>> Patient.objects.order_by('first_name').all()
+<QuerySet [<Patient: George, Calin is 45 old.>, <Patient: Mara, Calin is 12 old.>, <Patient: Sorina, Calin is 46 old.>, <Patient: Zizou, Calin is 3 old.>]>
+>>> Patient.objects.order_by('age').all()
+<QuerySet [<Patient: Zizou, Calin is 3 old.>, <Patient: Mara, Calin is 12 old.>, <Patient: George, Calin is 45 old.>, <Patient: Sorina, Calin is 46 old.>]>
+>>> Patient.objects.filter(age__lte = 45).all()
+<QuerySet [<Patient: George, Calin is 45 old.>, <Patient: Mara, Calin is 12 old.>, <Patient: Zizou, Calin is 3 old.>]>
+>>> quit()
+
+******************************************************************************************************************
+https://docs.djangoproject.com/en/4.2/ref/validators/
+
