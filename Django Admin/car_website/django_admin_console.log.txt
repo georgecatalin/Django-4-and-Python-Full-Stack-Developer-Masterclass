@@ -1,0 +1,20 @@
+(.venv) PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Admin\car_website> python manage.py createsuperuser
+Username (leave blank to use 'georgecalin'): 
+Email address: george.calin@gmail.com
+Password: 
+Password (again): 
+This password is too short. It must contain at least 8 characters.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+*************************************************************************
+
+(.venv) PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Admin\car_website> python manage.py runserver 1978 
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+September 29, 2023 - 17:55:45
+Django version 4.2.5, using settings 'car_website.settings'
+Starting development server at http://127.0.0.1:1978/
+Quit the server with CTRL-BREAK.
