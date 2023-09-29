@@ -1,5 +1,19 @@
 {% extends "base.html" %}
 
 {% block  content%}
-    <h1>Delete.html</h1>
+    <div class="container">
+        <h1>Delete.html</h1>
+        <h2>Enter the id of the record to delete it:</h2>
+
+        <div class="form-group">
+            <form action="" method='POST'>
+                {% csrf_token %} <!-- DO NOT FORGET TO ADD THIS TO MARK FOR ANTI CROSS SITE FORGERY -->
+                <div class="form-group">
+                    <label for="record_id">Record ID:</label>
+                    <input class="form-control" type="text" id="record_id" name="record_id">
+                </div>
+                    <input class="btn btn-primary" type="submit">
+            </form>
+        </div>
+    </div>
 {% endblock  %}

@@ -1,5 +1,26 @@
  {% extends "base.html" %}
 
  {% block content%}
-    <h1> Add.html </h1>
+ <div class="container">
+   <h1> Add.html </h1>
+   <h2> Add a new car to the database </h2>
+   <div>
+      <form action="" method="POST">
+         {% csrf_token %} <!-- DO NOT FORGET TO ADD THIS TO MARK FOR ANTI CROSS SITE FORGERY --> 
+         <div class="form-group">
+            <label  for="brand">Brand:</label>
+            <input class="form-control" type="text" id="brand" name="brand">
+         </div>
+         <div class="form-group">
+            <label for="year">Year</label>
+            <input class="form-control" type="text" id="year" name="year">
+         </div>
+         <input class='btn bg-primary' type="submit">
+      </form>
+   </div>
+
+ </div>
+
+
+  
  {% endblock %}
