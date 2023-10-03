@@ -9,7 +9,10 @@ def rental_review(request):
 
         if my_form.is_valid():
             print(my_form.cleaned_data)
+            my_form.save()
             return redirect(reverse('rentals:thank_you'))
+        else:
+            return render(request, 'rentals/rental_review.html', context = { 'form': my_form})
     else:
         my_form = RentalReview()
         return render(request, 'rentals/rental_review.html', context = { 'form': my_form})

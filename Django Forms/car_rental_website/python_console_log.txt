@@ -1,0 +1,17 @@
+S D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Forms\car_rental_website> python manage.py makemigrations
+Migrations for 'rentals':
+  rentals\migrations\0001_initial.py
+    - Create model Review
+PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Forms\car_rental_website> python manage.py migrate       
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, rentals, sessions
+Running migrations:
+  Applying rentals.0001_initial... OK
+PS D:\CodeLab\Workshop\Django-4-and-Python-Full-Stack-Developer-Masterclass\Django Forms\car_rental_website> python manage.py createsuperuser
+Username (leave blank to use 'georgecalin'): roco
+Email address: george.calin@gmail.com
+Password: 
+Password (again):
+This password is too short. It must contain at least 8 characters.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
