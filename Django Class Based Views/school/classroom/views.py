@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView, UpdateView, DeleteView
 from classroom.forms import ContactForm
 from classroom.models import Teacher
 
@@ -46,3 +46,15 @@ class TeacherDetailView(DetailView):
     model = Teacher
     # looks for this template model_detail.html
     # for a specific Primary Key send the {{teacher}} instance
+
+class TeacherUpdateView(UpdateView):
+    # share the model_form.html template with the CreateView
+    model = Teacher
+    fields = '__all__' # ['last_name', 'first_name']
+    success_url = reverse_lazy('classroom:list')
+
+class TeacherDeleteView(DeleteView):
+    # it is a form with a single "Confirm Delete Button"
+    # default template name it looks for is --> model_confirm_delete.html
+    model = Teacher
+    success_url = reverse_lazy('classroom:list')

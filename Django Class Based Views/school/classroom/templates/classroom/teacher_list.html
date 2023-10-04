@@ -7,7 +7,17 @@
     <h1>List of all teachers</h1>
     <ul>
         {% for teacher in object_list  %}  <!-- or 'teacher_list' instead 'object_list'(standard variable name) after it has been defined as context_object_name = 'teacher_list' in the class based view-->
-            <li><a href="/classroom/teacher_detail/{{teacher.id}}">{{teacher.first_name}} {{teacher.last_name}} </li>    
+            <li>
+                <a href="/classroom/teacher_details/{{teacher.id}}">{{teacher.first_name}} {{teacher.last_name}} </a>
+                <ul>
+                    <li>
+                        <a  href='/classroom/update_teacher/{{teacher.id}}'>Edit Record </a>
+                    </li>
+                    <li>
+                        <a  href='/classroom/delete_teacher/{{teacher.id}}'>Delete Record </a>
+                    </li>
+                </ul>
+            </li>    
         {% endfor %}
     </ul>
 </body>
