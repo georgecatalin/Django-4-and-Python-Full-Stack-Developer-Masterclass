@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.views.generic import TemplateView, FormView, CreateView, ListView
+from django.views.generic import TemplateView, FormView, CreateView, ListView, DetailView
 from classroom.forms import ContactForm
 from classroom.models import Teacher
 
@@ -40,3 +40,9 @@ class ContactFormView(FormView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+    
+class TeacherDetailView(DetailView):
+    # return only one model entry as per the primary key
+    model = Teacher
+    # looks for this template model_detail.html
+    # for a specific Primary Key send the {{teacher}} instance
