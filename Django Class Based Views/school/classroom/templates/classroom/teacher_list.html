@@ -1,0 +1,14 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List of all teachers</h1>
+    <ul>
+        {% for teacher in object_list  %}  <!-- or 'teacher_list' instead 'object_list'(standard variable name) after it has been defined as context_object_name = 'teacher_list' in the class based view-->
+            <li>{{teacher.first_name}} {{teacher.last_name}} teaches {{teacher.subject}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
